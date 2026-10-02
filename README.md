@@ -1,6 +1,6 @@
 # Online Course Management
 
-A .NET 8 take-home project implementing two independently runnable ASP.NET Core Web APIs:
+Proof of Concept: Build a simplified Online Course Management System using .NET. The system should consist of two independently runnable micro services: Course Service for courses and enrollment, and User Service for registration, authentication, and JWT-based authorization.
 
 - **User Service** – registration, login, JWT issuance, user profiles, and the internal user directory.
 - **Course Service** – course CRUD, enrollment, search, and pagination.
