@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{71A48578-535F-44E5-99D2-97391748546C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "src\UserService\UserService.csproj", "{18B647D7-E8F2-4976-9406-3EF45249BCB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseService", "src\CourseService\CourseService.csproj", "{D503B2E3-9792-4AEF-ABC0-F3204D3F559E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D190BD2D-F9F3-401F-8CB1-E709E855562F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCourseManagement.Tests", "tests\OnlineCourseManagement.Tests\OnlineCourseManagement.Tests.csproj", "{2CD3FAE5-1272-449B-B73F-5CB151250EE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{3297BAF8-2CB3-44FB-AA65-876468554F93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeTest", "tools\SmokeTest\SmokeTest.csproj", "{9F2B5BFB-716A-4385-8A19-5694FB706328}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18B647D7-E8F2-4976-9406-3EF45249BCB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18B647D7-E8F2-4976-9406-3EF45249BCB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18B647D7-E8F2-4976-9406-3EF45249BCB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18B647D7-E8F2-4976-9406-3EF45249BCB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D503B2E3-9792-4AEF-ABC0-F3204D3F559E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D503B2E3-9792-4AEF-ABC0-F3204D3F559E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D503B2E3-9792-4AEF-ABC0-F3204D3F559E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D503B2E3-9792-4AEF-ABC0-F3204D3F559E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CD3FAE5-1272-449B-B73F-5CB151250EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CD3FAE5-1272-449B-B73F-5CB151250EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CD3FAE5-1272-449B-B73F-5CB151250EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CD3FAE5-1272-449B-B73F-5CB151250EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2B5BFB-716A-4385-8A19-5694FB706328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2B5BFB-716A-4385-8A19-5694FB706328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2B5BFB-716A-4385-8A19-5694FB706328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2B5BFB-716A-4385-8A19-5694FB706328}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{18B647D7-E8F2-4976-9406-3EF45249BCB5} = {71A48578-535F-44E5-99D2-97391748546C}
+		{D503B2E3-9792-4AEF-ABC0-F3204D3F559E} = {71A48578-535F-44E5-99D2-97391748546C}
+		{2CD3FAE5-1272-449B-B73F-5CB151250EE7} = {D190BD2D-F9F3-401F-8CB1-E709E855562F}
+		{9F2B5BFB-716A-4385-8A19-5694FB706328} = {3297BAF8-2CB3-44FB-AA65-876468554F93}
+	EndGlobalSection
+EndGlobal

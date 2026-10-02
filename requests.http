@@ -1,0 +1,76 @@
+@userBase = http://localhost:5101
+@courseBase = http://localhost:5102
+@instructorId = REPLACE_WITH_REGISTERED_INSTRUCTOR_ID
+@studentId = REPLACE_WITH_REGISTERED_STUDENT_ID
+@instructorToken = REPLACE_WITH_INSTRUCTOR_ACCESS_TOKEN
+@studentToken = REPLACE_WITH_STUDENT_ACCESS_TOKEN
+@courseId = REPLACE_WITH_CREATED_COURSE_ID
+
+### Register an instructor; copy the returned id into instructorId
+POST {{userBase}}/api/auth/register
+Content-Type: application/json
+
+{"name":"Ada Instructor","email":"ada@example.test","password":"ReviewPass2026!","role":"Instructor"}
+
+### Register a student; copy the returned id into studentId
+POST {{userBase}}/api/auth/register
+Content-Type: application/json
+
+{"name":"Alex Student","email":"alex@example.test","password":"ReviewPass2026!","role":"Student"}
+
+### Instructor login; copy accessToken into instructorToken
+POST {{userBase}}/api/auth/login
+Content-Type: application/json
+
+{"email":"ada@example.test","password":"ReviewPass2026!"}
+
+### Student login; copy accessToken into studentToken
+POST {{userBase}}/api/auth/login
+Content-Type: application/json
+
+{"email":"alex@example.test","password":"ReviewPass2026!"}
+
+### Current student
+GET {{userBase}}/api/users/me
+Authorization: Bearer {{studentToken}}
+
+### Create a course; copy id into courseId
+POST {{courseBase}}/api/courses
+Authorization: Bearer {{instructorToken}}
+Content-Type: application/json
+
+{"title":"Distributed .NET","description":"Build reliable APIs.","startDate":"2030-01-10T09:00:00Z","endDate":"2030-01-12T09:00:00Z","instructorId":"{{instructorId}}"}
+
+### Self-enroll as the student (safe to repeat)
+POST {{courseBase}}/api/courses/{{courseId}}/enrollments/me
+Authorization: Bearer {{studentToken}}
+
+### Instructor enrolls a student (safe to repeat)
+POST {{courseBase}}/api/courses/{{courseId}}/enrollments
+Authorization: Bearer {{instructorToken}}
+Content-Type: application/json
+
+{"studentId":"{{studentId}}"}
+
+### Enrolled courses only
+GET {{courseBase}}/api/courses?pageNumber=1&pageSize=10
+Authorization: Bearer {{studentToken}}
+
+### Search enrolled courses by date overlap and instructor name
+GET {{courseBase}}/api/courses/search?startDate=2030-01-11T00:00:00Z&endDate=2030-01-13T00:00:00Z&instructorName=ada&pageNumber=1&pageSize=10
+Authorization: Bearer {{studentToken}}
+
+### Individual enrolled course
+GET {{courseBase}}/api/courses/{{courseId}}
+Authorization: Bearer {{studentToken}}
+
+### Replace course details
+PUT {{courseBase}}/api/courses/{{courseId}}
+Authorization: Bearer {{instructorToken}}
+Content-Type: application/json
+
+{"title":"Distributed .NET Updated","description":"Build reliable and secure APIs.","startDate":"2030-01-10T09:00:00Z","endDate":"2030-01-12T09:00:00Z","instructorId":"{{instructorId}}"}
+
+### Delete the course and its enrollments
+DELETE {{courseBase}}/api/courses/{{courseId}}
+Authorization: Bearer {{instructorToken}}
